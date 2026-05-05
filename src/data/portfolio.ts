@@ -15,7 +15,8 @@ export const profile = {
 export const stats = [
   { value: "7+", label: "Years Experience" },
   { value: "12+", label: "Product Projects" },
-
+  { value: "iOS & Android", label: "Platforms" },
+  { value: "Flutter", label: "Core Stack" },
 ];
 
 export const skills = [
@@ -225,9 +226,9 @@ export const projects: Project[] = [
   {
     slug: "sikupu",
     name: "siKUPU",
-    category: "Government App & Website",
+    category: "Government App",
     description:
-      "Android-based application and Website for Lampung government to record and check detail data of underprivileged residents.",
+      "Android-based application for Lampung government to record and check detail data of underprivileged residents.",
     impact: "Public-sector data collection",
     role: "Android Developer",
     stack: ["Android", "Data Collection", "Government System"],

@@ -13,7 +13,7 @@ export default function Home() {
       <Projects />
       <Contact />
       <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-zinc-500">
-        © 2026 Viky Fandreano. Built with Next.js, Tailwind CSS & Framer Motion.
+        © 2026 Viky Fandreano.
       </footer>
     </main>
   );

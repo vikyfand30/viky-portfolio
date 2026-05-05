@@ -1,54 +1,70 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDownRight, Smartphone } from "lucide-react";
+import { ArrowDownRight, BadgeCheck, Code2, Smartphone } from "lucide-react";
 import { profile, stats } from "@/data/portfolio";
 
 export function Hero() {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 600], [0, 140]);
+  const y = useTransform(scrollY, [0, 700], [0, 150]);
+  const rotate = useTransform(scrollY, [0, 700], [0, -8]);
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden px-6 pt-32 md:px-16">
-      <motion.div style={{ y }} className="absolute right-[-10%] top-24 h-[440px] w-[440px] rounded-full bg-orange-500/20 blur-3xl" />
+    <section id="home" className="relative min-h-screen overflow-hidden px-5 pb-20 pt-28 md:px-16 md:pt-36">
+      <motion.div style={{ y }} className="absolute right-[-38%] top-24 h-[360px] w-[360px] rounded-full bg-orange-500/25 blur-3xl md:right-[-10%] md:h-[520px] md:w-[520px]" />
+      <motion.div style={{ y: useTransform(scrollY, [0, 700], [0, -80]) }} className="absolute left-[-30%] top-[42%] h-[280px] w-[280px] rounded-full bg-white/10 blur-3xl md:left-[-12%]" />
       <div className="noise absolute inset-0 opacity-25" />
-      <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
+
+      <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
         <div>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-5 text-sm font-black uppercase tracking-[0.35em] text-orange-400">
-            Mobile Developer Portfolio
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1 }} className="text-6xl font-black uppercase leading-[.9] md:text-8xl xl:text-9xl">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-orange-300 md:text-sm">
+            <BadgeCheck className="h-4 w-4" /> Mobile Developer Portfolio
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08 }} className="text-[4.2rem] font-black uppercase leading-[.82] tracking-[-.08em] sm:text-8xl md:text-9xl xl:text-[10.5rem]">
             Viky<br />Fandreano
           </motion.h1>
-          <motion.h2 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }} className="mt-6 text-2xl font-semibold text-orange-400 md:text-5xl">
+          <motion.h2 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .18 }} className="mt-6 text-2xl font-black text-orange-400 md:text-5xl">
             {profile.role}
           </motion.h2>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .35 }} className="mt-7 max-w-2xl text-lg leading-8 text-zinc-300">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .32 }} className="mt-6 max-w-2xl text-base leading-8 text-zinc-300 md:text-lg">
             {profile.headline} {profile.about}
           </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .45 }} className="mt-10 flex flex-wrap gap-4">
-            <a href="#projects" className="group rounded-full bg-orange-400 px-6 py-4 font-black text-black transition hover:scale-105 hover:bg-orange-300">
-              View Projects <ArrowDownRight className="ml-2 inline h-5 w-5 transition group-hover:rotate-45" />
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .44 }} className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="#featured" className="group inline-flex justify-center rounded-full bg-orange-400 px-6 py-4 font-black text-black transition hover:scale-105 hover:bg-orange-300">
+              Explore Case Studies <ArrowDownRight className="ml-2 h-5 w-5 transition group-hover:rotate-45" />
             </a>
-            <a href={`mailto:${profile.email}`} className="rounded-full border border-white/20 px-6 py-4 font-black transition hover:border-orange-400 hover:text-orange-400">
+            <a href={`mailto:${profile.email}`} className="inline-flex justify-center rounded-full border border-white/20 px-6 py-4 font-black transition hover:border-orange-400 hover:text-orange-400">
               Contact Me
             </a>
           </motion.div>
         </div>
-        <motion.div initial={{ opacity: 0, scale: .9, rotate: -4 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: .8 }} className="card-glow relative rounded-[2.5rem] border border-white/10 bg-zinc-950/80 p-6">
-          <div className="rounded-[2rem] bg-gradient-to-br from-zinc-900 to-black p-8">
-            <Smartphone className="h-14 w-14 text-orange-400" />
-            <p className="mt-10 text-sm font-black uppercase tracking-[0.3em] text-zinc-500">Available for</p>
-            <h3 className="mt-3 text-4xl font-black">Flutter Apps, Startup Products & Mobile UX</h3>
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} className="rounded-2xl border border-white/10 bg-white/[.03] p-4">
-                  <p className="text-2xl font-black text-orange-400">{s.value}</p>
-                  <p className="mt-1 text-sm text-zinc-400">{s.label}</p>
-                </div>
+
+        <motion.div style={{ rotate }} initial={{ opacity: 0, scale: .9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: .8 }} className="gradient-border card-glow relative rounded-[2rem] bg-zinc-950/80 p-4 md:rounded-[2.5rem] md:p-6">
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="rounded-[1.6rem] bg-gradient-to-br from-zinc-900 via-black to-zinc-950 p-6 md:rounded-[2rem] md:p-8">
+            <div className="flex items-start justify-between gap-4">
+              <div className="rounded-3xl bg-orange-400 p-4 text-black"><Smartphone className="h-9 w-9 md:h-12 md:w-12" /></div>
+              <div className="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-xs font-black text-zinc-300">Available</div>
+            </div>
+            <p className="mt-8 text-xs font-black uppercase tracking-[0.3em] text-zinc-500 md:mt-10">Focus Area</p>
+            <h3 className="mt-3 text-3xl font-black leading-tight md:text-5xl">Flutter Apps, Startup Products & Mobile UX</h3>
+            <div className="mt-7 grid grid-cols-2 gap-3 md:gap-4">
+              {stats.map((s, index) => (
+                <motion.div
+                  key={s.label}
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: .55 + index * .08 }}
+                  className="rounded-2xl border border-white/10 bg-white/[.035] p-4 transition hover:-translate-y-1 hover:border-orange-400/50"
+                >
+                  <p className="text-xl font-black text-orange-400 md:text-2xl">{s.value}</p>
+                  <p className="mt-1 text-xs leading-5 text-zinc-400 md:text-sm">{s.label}</p>
+                </motion.div>
               ))}
             </div>
-          </div>
+            <div className="mt-6 flex items-center gap-3 rounded-2xl border border-white/10 bg-black/50 p-4 text-sm text-zinc-300">
+              <Code2 className="h-5 w-5 text-orange-400" /> Production-ready mindset, not just pretty UI.
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
