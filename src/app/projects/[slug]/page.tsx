@@ -55,6 +55,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
   if (!project) notFound();
 
+  const currentIndex = projects.findIndex((item) => item.slug === project.slug);
+  const previousProject = projects[(currentIndex - 1 + projects.length) % projects.length];
+  const nextProject = projects[(currentIndex + 1) % projects.length];
+
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="relative overflow-hidden px-5 pb-16 pt-24 md:px-16 md:pb-20 md:pt-28">
@@ -69,7 +73,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.08fr_.92fr] lg:items-end">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.35em] text-orange-400 md:text-sm">{project.category}</p>
-              <h1 className="mt-5 text-5xl font-black leading-[.9] tracking-[-.07em] md:text-8xl">{project.name}</h1>
+              <h1 className="mt-5 break-words text-[clamp(3rem,13vw,5.6rem)] font-black leading-[0.95] tracking-[-.055em] md:text-8xl md:leading-[.9]">{project.name}</h1>
               <p className="mt-7 max-w-3xl text-base leading-8 text-zinc-300 md:text-xl md:leading-9">{project.description}</p>
             </div>
 
@@ -143,6 +147,25 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 pb-16 md:px-16 md:pb-20">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-xs font-black uppercase tracking-[0.35em] text-orange-400 md:text-sm">More Case Studies</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {[previousProject, nextProject].map((item, index) => (
+              <Link
+                key={`${item.slug}-${index}`}
+                href={`/projects/${item.slug}`}
+                className="group rounded-[2rem] border border-white/10 bg-zinc-950 p-5 transition hover:-translate-y-1 hover:border-orange-400/70 md:p-6"
+              >
+                <p className="text-xs font-black uppercase tracking-[0.25em] text-zinc-500">{index === 0 ? "Previous" : "Next"}</p>
+                <h3 className="mt-3 text-2xl font-black transition group-hover:text-orange-400 md:text-3xl">{item.name}</h3>
+                <p className="mt-3 line-clamp-2 text-sm leading-6 text-zinc-400">{item.description}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

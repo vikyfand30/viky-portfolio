@@ -20,15 +20,8 @@ export function Hero() {
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-orange-300 md:text-sm">
             <BadgeCheck className="h-4 w-4" /> Mobile Developer Portfolio
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 36 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: .08 }}
-            className="max-w-full text-[clamp(3rem,16vw,5.8rem)] font-black uppercase leading-[0.95] tracking-[-0.055em] sm:text-8xl sm:leading-[0.9] md:text-9xl xl:text-[10.5rem]"
-          >
-            Viky
-            <br />
-            <span className="text-orange-400">Fandreano</span>
+          <motion.h1 initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08 }} className="text-[4.2rem] font-black uppercase leading-[.82] tracking-[-.08em] sm:text-8xl md:text-9xl xl:text-[10.5rem]">
+            Viky<br />Fandreano
           </motion.h1>
           <motion.h2 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .18 }} className="mt-6 text-2xl font-black text-orange-400 md:text-5xl">
             {profile.role}
@@ -53,7 +46,7 @@ export function Hero() {
               <div className="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-xs font-black text-zinc-300">Available</div>
             </div>
             <p className="mt-8 text-xs font-black uppercase tracking-[0.3em] text-zinc-500 md:mt-10">Focus Area</p>
-            <h3 className="mt-3 text-3xl font-black leading-tight md:text-5xl">Flutter Apps, Startup Products & Mobile UX</h3>
+            <h3 className="mt-3 text-3xl font-black leading-tight md:text-5xl">Flutter Apps, Startup Products & Interactive Web</h3>
             <div className="mt-7 grid grid-cols-2 gap-3 md:gap-4">
               {stats.map((s, index) => (
                 <motion.div

@@ -1,15 +1,6 @@
-# Viky Fandreano Portfolio
+# Viky Fandreano Portfolio — Senior Interactive Edition
 
-Senior-style portfolio website built with Next.js, Tailwind CSS, and Framer Motion.
-
-## Features
-
-- Scroll reveal animation with Framer Motion
-- Featured Project section
-- Project detail pages / case studies
-- Live project link for Davirjie Indo Para Website
-- Responsive dark-orange professional design
-- Ready for Vercel deployment
+Next.js portfolio website with mobile-first UX, Framer Motion scroll animation, featured case studies, and project detail pages.
 
 ## Run locally
 
@@ -18,10 +9,19 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+## Latest upgrade included
 
-## Important files
+- Added CoffeeShop Interactive Website as a new project
+- Added CoffeeShop as a Featured Project
+- Added a full case-study detail page via dynamic route `/projects/coffeeshop-interactive`
+- Added live project link to the card and case-study page
+- Improved hero mobile heading so the name no longer gets cut off
+- Updated stats, skills, and copy to include interactive web work
+- Added previous/next case-study navigation on detail pages
 
-- `src/data/portfolio.ts` — edit profile, experience, and projects
-- `src/components/Sections.tsx` — homepage sections
-- `src/app/projects/[slug]/page.tsx` — case-study detail page
+## Main files changed
+
+- `src/data/portfolio.ts`
+- `src/components/Hero.tsx`
+- `src/components/Sections.tsx`
+- `src/app/projects/[slug]/page.tsx`

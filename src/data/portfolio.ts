@@ -1,11 +1,11 @@
 export const profile = {
   name: "Viky Fandreano",
   role: "Mobile Developer",
-  headline: "Flutter-focused mobile developer building smooth, scalable, business-ready apps.",
+  headline: "Flutter-focused mobile developer building smooth mobile apps, interactive websites, and business-ready digital products.",
   email: "vikyfandreano30@gmail.com",
   linkedin: "https://linkedin.com/in/vikyfand",
   social: "@vikyfand",
-  phone: "+6281932*****",
+  phone: "+6281932097214",
   location: "Indonesia",
   years: "7+",
   about:
@@ -14,7 +14,7 @@ export const profile = {
 
 export const stats = [
   { value: "7+", label: "Years Experience" },
-  { value: "12+", label: "Product Projects" },
+  { value: "13+", label: "Product Projects" },
   { value: "iOS & Android", label: "Platforms" },
   { value: "Flutter", label: "Core Stack" },
 ];
@@ -32,6 +32,8 @@ export const skills = [
   "Clean Architecture",
   "Next.js",
   "Tailwind CSS",
+  "Framer Motion",
+  "Interactive UI",
   "Product Strategy",
   "Team Leadership",
 ];
@@ -116,6 +118,25 @@ export const projects: Project[] = [
     solution:
       "Contributed to mobile development implementation for a financial product with attention to user flow, stability, and maintainability.",
     results: ["Delivered banking mobile features", "Worked in high-standard product environment", "Strengthened finance-app development experience"],
+  },
+  {
+    slug: "coffeeshop-interactive",
+    name: "CoffeeShop Interactive Website",
+    category: "Interactive Web",
+    description:
+      "A modern interactive coffee shop website with responsive layout, smooth animation, immersive product sections, and polished UI experience.",
+    impact: "Creative web experience with live deployment",
+    role: "Frontend Developer",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Responsive UI", "Vercel"],
+    liveUrl: "https://coffeeshop-interactive.vercel.app/",
+    featured: true,
+    overview:
+      "CoffeeShop Interactive Website is a creative frontend project designed to show how a simple business website can feel more alive through motion, clear visual hierarchy, responsive sections, and interactive storytelling.",
+    challenge:
+      "Coffee shop websites often look generic. The challenge was making the experience feel premium, warm, and interactive while staying fast and usable on mobile devices.",
+    solution:
+      "Built a responsive Next.js interface with strong hero composition, animated content sections, hover interactions, mobile-friendly layouts, and production deployment on Vercel.",
+    results: ["Launched live interactive website", "Created stronger creative-web portfolio proof", "Improved responsive UI and animation showcase"],
   },
   {
     slug: "davirjie-indo-para",

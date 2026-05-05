@@ -123,7 +123,7 @@ export function FeaturedProjects() {
               <p className="text-xs font-black uppercase tracking-[0.35em] text-orange-400 md:text-sm">Featured Project</p>
               <h2 className={`mt-5 ${sectionTitle}`}>Senior-level case studies.</h2>
             </div>
-            <p className="max-w-md text-zinc-400">Strongest works: health tech, banking, marketplace, production website, and founder-led product. Singkatnya: bukan portfolio pajangan doang.</p>
+            <p className="max-w-md text-zinc-400">Strongest works: health tech, banking, marketplace, corporate website, interactive coffee shop website, and founder-led product. Singkatnya: bukan portfolio pajangan doang.</p>
           </div>
         </Reveal>
 
@@ -184,7 +184,7 @@ export function Projects() {
             <p className="text-xs font-black uppercase tracking-[0.35em] text-orange-400 md:text-sm">Projects</p>
             <h2 className={`mt-5 ${sectionTitle}`}>All Selected Works</h2>
           </div>
-          <p className="max-w-md text-zinc-400">Every card opens a detail page, with mobile-friendly layout, scroll reveal, hover state, and CTA. Udah lebih senior, bukan spreadsheet berkedok website.</p>
+          <p className="max-w-md text-zinc-400">Every card opens a detail page with case-study structure, mobile-friendly layout, scroll reveal, hover state, live links, and CTA. Udah lebih senior, bukan spreadsheet berkedok website.</p>
         </div>
       </Reveal>
       <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
