@@ -5,7 +5,7 @@ export const profile = {
   email: "vikyfandreano30@gmail.com",
   linkedin: "https://linkedin.com/in/vikyfand",
   social: "@vikyfand",
-  phone: "+6281932097214",
+  phone: "+6281932*****",
   location: "Indonesia",
   years: "7+",
   about:
